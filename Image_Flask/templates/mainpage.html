@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Tyre Guardian</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D4E6F4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            text-align: center;
+            color: #007bff;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .upload-text {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        .upload-form {
+            text-align: center;
+        }
+
+        .upload-input {
+            display: inline;
+            margin-bottom: 20px;
+        }
+
+        .upload-button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+
+        .uploaded-image {
+            display: inline;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+        <h1 class="title mt-2 mb-4">The Tyre Guardian</h1>
+        <div class="upload-text mb-3">Upload an image</div>
+        <form id="imageUploadForm" class="upload-form d-flex flex-column align-items-center" enctype="multipart/form-data">
+            <input type="file" class="form-control upload-input mb-3" id="imageInput" accept="image/*" onchange="loadImage(event)" required>
+            <img id="imageOutput" class="uploaded-image mb-3" width="400">
+            <input type="submit" class="btn btn-primary submit-btn" id="submit" value="Submit">
+        </form>
+        
+        <div id="response" class="response mt-3"></div>
+
+        <script src="/static/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
